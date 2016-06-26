@@ -9,16 +9,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Bean;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.time.LocalTime;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
 import java.util.stream.Collectors;
 
 @EnableDiscoveryClient
@@ -43,10 +39,10 @@ public class ReservationApplication {
 class Reservation {
 
     private Long id;
-    private String revservationName;
+    private String reservationName;
 
     public Reservation(String reservationName) {
-        this.revservationName = reservationName;
+        this.reservationName = reservationName;
         this.id = System.currentTimeMillis();
     }
 }
